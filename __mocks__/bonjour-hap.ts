@@ -1,6 +1,8 @@
 class Advertisement {
   updateTxt = jest.fn();
-  stop = jest.fn();
+  stop = jest.fn().mockImplementation(callback => {
+    callback && callback()
+  });
   destroy = jest.fn();
 }
 
