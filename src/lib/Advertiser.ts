@@ -97,12 +97,14 @@ export class Advertiser {
 
   stopAdvertising = () => {
     if (this._advertisement) {
-      this._advertisement.stop();
-      this._advertisement.destroy();
-      this._advertisement = null;
+      this._advertisement.stop(() => {
+        this._advertisement?.destroy();
+        this._advertisement = null;
+        this._bonjourService.destroy();
+      });
+    } else {
+      this._bonjourService.destroy();
     }
-
-    this._bonjourService.destroy();
   }
 
   _computeSetupHash = () => {
