@@ -4734,3 +4734,74 @@ export class WiFiSatelliteStatus extends Characteristic {
 }
 Characteristic.WiFiSatelliteStatus = WiFiSatelliteStatus;
 
+
+/**
+ * Characteristic "Configuration State"
+ */
+ export class ConfigurationState extends Characteristic {
+
+  public static readonly UUID: string = "00000263-0000-1000-8000-0026BB765291";
+
+  constructor() {
+    super("Configuration State", ConfigurationState.UUID, {
+      format: Formats.UINT16,
+      perms: [Perms.NOTIFY, Perms.PAIRED_READ],
+      minValue: 0,
+      maxValue: 5,
+    });
+    this.value = this.getDefaultValue();
+  }
+}
+Characteristic.ConfigurationState = ConfigurationState;
+
+/**
+ * Characteristic "NFC Access Control Point"
+ */
+ export class NFCAccessControlPoint extends Characteristic {
+
+  public static readonly UUID: string = "00000264-0000-1000-8000-0026BB765291";
+
+  constructor() {
+    super("NFC Access Control Point", NFCAccessControlPoint.UUID, {
+      format: Formats.TLV8,
+      perms: [Perms.PAIRED_READ, Perms.PAIRED_WRITE, Perms.WRITE_RESPONSE],
+    });
+    this.value = this.getDefaultValue();
+  }
+}
+Characteristic.NFCAccessControlPoint = NFCAccessControlPoint;
+
+/**
+ * Characteristic "NFC Access Supported Configuration"
+ */
+ export class NFCAccessSupportedConfiguration extends Characteristic {
+
+  public static readonly UUID: string = "00000265-0000-1000-8000-0026BB765291";
+
+  constructor() {
+    super("NFC Access Supported Configuration", NFCAccessSupportedConfiguration.UUID, {
+      format: Formats.TLV8,
+      perms: [Perms.PAIRED_READ],
+    });
+    this.value = this.getDefaultValue();
+  }
+}
+Characteristic.NFCAccessSupportedConfiguration = NFCAccessSupportedConfiguration;
+
+/**
+ * Characteristic "Hardware Finish"
+ */
+ export class HardwareFinish extends Characteristic {
+
+  public static readonly UUID: string = "0000026C-0000-1000-8000-0026BB765291";
+
+  constructor() {
+    super("Hardware Finish", HardwareFinish.UUID, {
+      format: Formats.TLV8,
+      perms: [Perms.PAIRED_READ],
+    });
+    this.value = this.getDefaultValue();
+  }
+}
+Characteristic.HardwareFinish = HardwareFinish;
+

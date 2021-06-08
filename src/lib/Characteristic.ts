@@ -236,6 +236,10 @@ import {
   WiFiCapabilities,
   WiFiConfigurationControl,
   WiFiSatelliteStatus,
+  ConfigurationState,
+  NFCAccessControlPoint,
+  NFCAccessSupportedConfiguration,
+  HardwareFinish,
 } from "./definitions";
 import { HAPStatus, IsKnownHAPStatusError } from "./HAPServer";
 import { IdentifierCache } from './model/IdentifierCache';
@@ -858,6 +862,10 @@ export class Characteristic extends EventEmitter {
   public static WiFiCapabilities: typeof WiFiCapabilities;
   public static WiFiConfigurationControl: typeof WiFiConfigurationControl;
   public static WiFiSatelliteStatus: typeof WiFiSatelliteStatus;
+  public static ConfigurationState: typeof ConfigurationState;
+  public static NFCAccessControlPoint: typeof NFCAccessControlPoint;
+  public static NFCAccessSupportedConfiguration: typeof NFCAccessSupportedConfiguration;
+  public static HardwareFinish: typeof HardwareFinish;
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
   // NOTICE: when adding/changing properties, remember to possibly adjust the serialize/deserialize functions

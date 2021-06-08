@@ -80,6 +80,7 @@ import {
   WiFiTransport,
   Window,
   WindowCovering,
+  NFCAccessService,
 } from "./definitions";
 import { IdentifierCache } from './model/IdentifierCache';
 import { HAPConnection } from "./util/eventedhttp";
@@ -261,6 +262,7 @@ export class Service extends EventEmitter {
   public static WiFiTransport: typeof WiFiTransport;
   public static Window: typeof Window;
   public static WindowCovering: typeof WindowCovering;
+  public static NFCAccessService: typeof NFCAccessService;
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
   // NOTICE: when adding/changing properties, remember to possibly adjust the serialize/deserialize functions

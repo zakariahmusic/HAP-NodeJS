@@ -50,6 +50,7 @@ export class AccessoryInformation extends Service {
     this.addOptionalCharacteristic(Characteristic.HardwareRevision);
     this.addOptionalCharacteristic(Characteristic.SoftwareRevision);
     this.addOptionalCharacteristic(Characteristic.ProductData);
+    this.addOptionalCharacteristic(Characteristic.HardwareFinish);
   }
 }
 Service.AccessoryInformation = AccessoryInformation;
@@ -1563,4 +1564,22 @@ export class WindowCovering extends Service {
   }
 }
 Service.WindowCovering = WindowCovering;
+
+/**
+ * Service "NFC Access Service"
+ */
+ export class NFCAccessService extends Service {
+
+  public static readonly UUID: string = "00000266-0000-1000-8000-0026BB765291";
+
+  constructor(displayName?: string, subtype?: string) {
+    super(displayName, NFCAccessService.UUID, subtype);
+
+    // Required Characteristics
+    this.addCharacteristic(Characteristic.ConfigurationState);
+    this.addCharacteristic(Characteristic.NFCAccessControlPoint);
+    this.addCharacteristic(Characteristic.NFCAccessSupportedConfiguration);
+  }
+}
+Service.NFCAccessService = NFCAccessService;
 
