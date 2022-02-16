@@ -19,6 +19,7 @@ export class AccessCode extends Service {
     this.addCharacteristic(Characteristic.AccessCodeControlPoint);
     this.addCharacteristic(Characteristic.AccessCodeSupportedConfiguration);
     this.addCharacteristic(Characteristic.ConfigurationState);
+    this.addCharacteristic(Characteristic.Active);
   }
 }
 Service.AccessCode = AccessCode;
